@@ -1,0 +1,36 @@
+name: Condolence
+version: 1.0.0
+description: ''
+icon: 'book'
+author:
+  name: 'Sebastian Laube'
+  email: 'sebastian.laube@mindbox.de'
+license: 'MIT'
+gpm: false
+
+dependencies:
+  - { name: grav, version: '>=1.7.5' }
+  - { name: svg-extension }
+
+form:
+  validation: loose
+  fields:
+    logo:
+      type: filepicker
+      label: THEME_C.CONFIG.LOGO
+      toggleable: true
+      help: THEME_C.CONFIG.LOGO_HELP
+      folder: 'page@:/home/'
+      preview_images: true
+      accept:
+        - .png
+        - .jpg
+
+    env:
+      type: select
+      label: THEME_C.ENV.STATUS
+      size: large
+      default: production
+      options:
+        production: THEME_C.ENV.PROD
+        dev: THEME_C.ENV.DEV

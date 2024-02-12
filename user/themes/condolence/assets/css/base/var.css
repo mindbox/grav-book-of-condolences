@@ -1,0 +1,78 @@
+/* stylelint-disable */
+html {
+    /* define design tokens */
+
+    --font-default: system-ui, sans-serif;
+
+    --font-line: calc( 1em + .42rem );
+    /*
+        read about line-height: https://hugogiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
+        which will recommend something like calc( 1.1em + .25rem )
+    */
+
+    /*
+        Wrapping
+    */
+    --wrapper: 50rem;
+    --wrapper-offset: .5fr;
+    @media ( min-width: 40rem ) {
+        --wrapper-offset: 4rem;
+    }
+
+    /*
+        Spacing
+        @see https://en.wikipedia.org/wiki/Metric_prefix
+    */
+    --gap-deci: .625rem;
+    --gap: 1.25rem; /* default distance */
+    --gap-deca: 2.5rem;
+    --gap-hecto: 4rem;
+    --gap-kilo: 8rem;
+    --gap-mega: 12rem;
+    --gap-giga: 16rem;
+
+    /* font-sizes */
+    --size-deci: .8em;
+    --size-deca: 1.2em;
+    --size-hecto: 1.55em;
+    --size-kilo: 1.9em;
+    --size-mega: 2.3em;
+    --size-giga: 3em;
+
+    /* colors and element specifics */
+    --orange: #fc0;
+
+    --default-primary: var( --orange );
+    --default-on-primary: var( --default-color );
+
+    --default-color: #333;
+    --default-background: #fff;
+    --default-muted: #777;
+    --default-borderColor: #ddd;
+    --default-linkColor: #00749d;
+    --default-linkColorHover: #0061fc;
+
+    --outline-size: max( 2px, .08em );
+    --outline-style: solid;
+    --outline-ink: var( --orange );
+    /* --outline-offset: .2em; */
+
+    --o-header-background: #111;
+    --o-header-color: #eee;
+    --o-footer-background: #000;
+    --o-footer-color: #eee;
+
+    --o-rip-background: #222;
+    --o-rip-color: #f6f6f6;
+
+    --f-form-label-color: #555;
+    --f-form-error-color: hsl( 0 100% 33% );
+    --f-form-error-background: hsl( 0 100% 95% );
+
+    --f-b-2nd-textcolor: #fff;
+    --f-b-2nd-border: .1em solid #fff;
+    --f-b-2nd-background-hover: none;
+    --f-b-2nd-textcolor-hover: var( --orange );
+    --f-b-2nd-bordercolor-hover: var( --orange );
+}
+/* stylelint-endable */

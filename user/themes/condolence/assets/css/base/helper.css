@@ -1,0 +1,25 @@
+.vh,
+.visually-hidden {
+    position: fixed;
+    z-index: 20;
+
+    &:not(:focus):not(:active) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        clip-path: inset(50%);
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+.skiplink {
+    display: block;
+    top: 1rem;
+    left: 1rem;
+    padding: 1em;
+    background-color: #111;
+    color: #eee;
+}
+
+.u-hidden { display: none; }

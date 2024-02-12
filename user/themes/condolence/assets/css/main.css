@@ -1,0 +1,33 @@
+/* Settings, basic elements, fixes/homogenisation */
+@import 'base/var.css';
+@import 'base/view-transition.css';
+@import 'base/superscale.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'base/form.css';
+@import 'base/helper.css';
+
+/* form components */
+@import 'form/forms.css';
+
+/* simple self containing units */
+@import 'molecule/logo.css';
+
+/* more copmplex modules */
+/* global */
+@import 'organism/header.css';
+@import 'organism/footer.css';
+@import 'organism/textflow.css';
+@import 'organism/notice.css';
+/* specific */
+
+@import 'organism/condolence.css';
+@import 'organism/rip.css';
+@import 'organism/goodbye.css';
+
+
+/* layouts define the relations between modules on a specific page type */
+@import 'template/global.css';
+@import 'template/default.css';
+@import 'template/error.css';
+@import 'template/condolence.css';

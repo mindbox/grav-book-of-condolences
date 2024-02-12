@@ -1,0 +1,11 @@
+PLUGIN_CONDOLENCE:
+  CONDOLENCE: Kondolenz
+  DESCRIPTION: Kondolenzbuch
+
+  CREATE: Eintrag anlegen
+  NAME: Name
+  MESSAGE: Nachricht
+  DATE: Datum
+
+  LIST:
+    PUB: Verö.

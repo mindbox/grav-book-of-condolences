@@ -1,0 +1,67 @@
+.button {
+    /*
+        API:
+        --f-button-background       background color
+        --f-button-color            text color
+        --f-button-backgroundHover  hover background color
+        --f-button-colorHover       hover text color
+    */
+    --_bg: var( --f-button-background, var( --default-primary) );
+    --_txt: var( --f-button-color, var( --default-on-primary ) );
+    --_brd: var( --f-b-border, none );
+    --_hover-bg: var( --f-button-backgroundHover, color-mix( in oklab, #000 20%, var( --default-primary ) ) );
+    --_hover-txt: var( --f-button-colorHover, var( --default-on-primary ) );
+    --_hover-brd-color: var( --f-b-bordercolorHover, inherit );
+
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1em;
+    line-height: 1.2;
+    text-align: center;
+    color: var( --_txt );
+    background: var( --_bg );
+    border: var( --_brd );
+    border-radius: .3em;
+    transition: background-color .2s;
+
+
+    /*
+    display: flex;
+    width: fit-content
+    */
+
+    a& {
+        text-decoration: none;
+    }
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+        --_bg: var( --_hover-bg );
+        --_txt: var( --_hover-txt );
+        border-color: var( --_hover-brd-color );
+    }
+
+    &[disabled] {
+        opacity: .3;
+        filter: saturate( 0 );
+        cursor: not-allowed;
+    }
+
+    &--small {
+        padding: 1ex;
+    }
+
+    &--secondary {
+        --_bg: var( --f-b-2nd-background, none );
+        --_txt: var( --f-b-2nd-textcolor, var( --default-primary ) );
+        --_brd: var( --f-b-2nd-border, .1em solid var( --default-primary ) );
+        --_hover-bg: var( --f-b-2nd-background-hover, var( --default-primary ) );
+        --_hover-txt: var( --f-b-2nd-textcolor-hover, var( --default-on-primary ) );
+        --_hover-brd-color: var( --f-b-2nd-bordercolor-hover, inherit );
+    }
+
+}

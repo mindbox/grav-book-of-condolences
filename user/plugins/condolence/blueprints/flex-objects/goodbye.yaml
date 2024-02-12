@@ -1,0 +1,147 @@
+title: PLUGIN_CONDOLENCE.CONDOLENCE
+description: PLUGIN_CONDOLENCE.DESCRIPTION
+type: flex-objects
+
+# Flex Configuration
+config:
+    # Administration Configuration
+    admin:
+        # Admin router (optional)
+        router:
+            path: '/goodbye'
+
+        # Admin menu (optional)
+        menu:
+            list:
+                route: '/goodbye'
+                title: PLUGIN_CONDOLENCE.CONDOLENCE
+                icon: fa-quote-left
+                # Authorization to collection admin
+                authorize: ['admin.goodbye.list', 'admin.super']
+                # Priority -10 .. 10 (highest goes up)
+                priority: 2
+
+        # Admin template type / folder
+        template: default
+
+        # Permissions
+        permissions:
+            # Primary permissions
+            admin.goodbye:
+                type: crudpl
+                label: PLUGIN_CONDOLENCE.CONDOLENCE
+
+        # List view
+        list:
+            title: name
+            fields:
+                published:
+                    field:
+                        type: toggle
+                        label: PLUGIN_CONDOLENCE.LIST.PUB
+                    width: 8
+                name:
+                    link: edit
+                message:
+            options:
+                per_page: 50
+                order:
+                    by: date
+                    dir: desc
+
+        # Edit View
+        edit:
+            title:
+                template: '{{ object.title ?? ''PLUGIN_CONDOLENCE.CREATE''|tu }}'
+
+        # Preview View
+        preview:
+            enabled: false
+            route:
+            #template: '/plugins/flex-objects/directory:contacts'
+
+        # Data Export
+        export:
+            enabled: true
+            method: 'jsonSerialize'
+            formatter:
+                class: 'Grav\Framework\File\Formatter\YamlFormatter'
+            filename: 'goodbye'
+
+    # Site Configuration
+    site:
+        templates:
+            collection:
+                # Lookup for the template layout files for collections of objects
+                paths:
+                    - 'flex/{TYPE}/collection/{LAYOUT}{EXT}'
+            object:
+                # Lookup for the template layout files for objects
+                paths:
+                    - 'flex/{TYPE}/object/{LAYOUT}{EXT}'
+            defaults:
+                # Default template {TYPE}; overridden by filename of this blueprint if template folder exists
+                type: 'goodbye'
+                # Default template {LAYOUT}; can be overridden in render calls (usually Twig in templates)
+                layout: default
+
+    # Data Configuration
+    data:
+        # Object class to be used, allowing custom methods for the object
+        object: 'Grav\Plugin\Condolence\Flex\Types\Goodbye\GoodbyeObject'
+        # Collection class to be used, allowing custom methods for the collections
+        collection: 'Grav\Plugin\Condolence\Flex\Types\Goodbye\GoodbyeCollection'
+        # Index class to be used, works as a quick database-like lookup index
+        index: 'Grav\Common\Flex\Types\Generic\GenericIndex'
+        storage:
+            # Storage class, use single file storage (does not support images and assets)
+            class: 'Grav\Framework\Flex\Storage\FileStorage'
+            options:
+                formatter:
+                    # File formatter class, in this case the file is stored in markdown
+                    class: 'Grav\Framework\File\Formatter\JsonFormatter'
+                # JSON file where all the objects will be stored
+                folder: user-data://flex-objects/goodbye
+        search:
+            # Search options
+            options:
+                contains: 1
+            # Fields to be searched
+            fields:
+                - name
+                - message
+        ordering:
+            date: DESC
+
+form:
+    validation: loose
+    fields:
+        published:
+            type: toggle
+            label: PLUGIN_ADMIN.VISIBLE
+            highlight: 1
+            default: 1
+            options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+            validate:
+                type: bool
+                required: true
+        name:
+            type: text
+            label: PLUGIN_CONDOLENCE.NAME
+            autocomplete: off
+            validate:
+                required: true
+        message:
+            type: textarea
+            label: PLUGIN_CONDOLENCE.MESSAGE
+            rows: 4
+            validate:
+                required: true
+        date:
+            type: text
+            label: PLUGIN_CONDOLENCE.DATE
+            autocomplete: off
+            validate:
+                required: true

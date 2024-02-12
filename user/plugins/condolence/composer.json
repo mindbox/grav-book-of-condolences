@@ -1,0 +1,24 @@
+{
+  "name": "sebastian-laube/condolence",
+  "type": "grav-plugin",
+  "description": "digital condolence book",
+  "keywords": ["plugin"],
+  "homepage": "https://github.com/sebastian-laube/grav-plugin-condolence",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sebastian Laube",
+      "email": "sebastian.laube@mindbox.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\Condolence\\": "classes/"
+    },
+    "classmap":  ["condolence.php"]
+  }
+}

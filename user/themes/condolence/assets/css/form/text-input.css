@@ -1,0 +1,71 @@
+.text-input {
+    /*
+        API:
+        --f-input-ink               input text color
+        --f-input-background        input background color
+        --f-input-border            input border color
+        --f-input-padding           input padding
+        --f-input-border-hover      hover border-color
+        --f-input-halo-hover        hover focus halo
+        --f-input-ink-disabled      disabled text color
+        --f-input-backgroundDisabled  disabled background color
+        --f-input-borderDisabled    disabled border color
+    */
+    --_text: var( --f-input-color, var( --default-color ) );
+    --_background: var( --f-input-background, var( --default-background ) );
+    --_borderColor: var( --f-input-border, var( --default-borderColor ) );
+    --_borderWidth: var( --f-input-borderWidth, max( 1px, .1rem ) );
+
+    appearance: none;
+    width: 100%;
+    padding: var( --f-input-padding, .7rem );
+    line-height: var( --font-line );
+    color: var( --_text );
+    background: var( --_background );
+    border: var( --_borderWidth ) solid var( --_borderColor );
+    border-radius: .3em;
+    box-shadow: 0 0 0 transparent;
+    transition: border-color .3s, box-shadow .2s;
+    box-shadow: var( --_boxshadow, none );
+    resize: vertical;
+
+    label + & {
+        margin-top: .3rem;
+    }
+
+    &:hover {
+        &:not(:disabled) {
+            --_borderColor: var( --f-input-borderHover, var( --default-primary ) );
+            --_boxshadow: 0 0 0 .1em var( --f-input-halo-hover );
+        }
+    }
+    &:focus {
+        --_borderColor: var( --f-input-borderHover, var( --default-primary ) );
+        --_boxshadow: 0 0 0 .1em var( --f-input-halo-hover );
+    }
+    /* input&:not(:focus):not(:placeholder-shown):invalid, */
+    input&:user-invalid,
+    textarea&:user-invalid,
+    select&:not([value='']):invalid {
+        --_background: var( --f-form-error-background, hsl( 0 100% 95% ) );
+        --_borderColor: var( --f-form-error-color, hsl( 0 100% 33% ) );
+        --_boxshadow: inset 0 0 0 .1em var( --f-form-error-color, hsl( 0 100% 33% ) );
+    }
+
+    &:disabled {
+        --_text: var( --f-input-color-disabled, var( --default-muted ) );
+        --_background: var( --f-input-backgroundDisabled, var( --default-ui ) );
+        --_borderColor: var( --f-input-borderDisabled, var( --default-borderColor) );
+        opacity: .6;
+        cursor: not-allowed;
+    }
+    &[readonly] {
+        --_text: var( --f-input-color-disabled, var( --default-muted ) );
+        --_background: var( --f-input-backgroundDisabled, var( --default-ui ) );
+        --_borderColor: var( --f-input-borderDisabled, var( --default-borderColor) );
+    }
+
+    &[type='number'] {
+        font-variant-numeric: tabular-nums;
+    }
+}

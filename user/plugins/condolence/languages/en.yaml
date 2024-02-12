@@ -1,0 +1,11 @@
+PLUGIN_CONDOLENCE:
+  CONDOLENCE: Condolence
+  DESCRIPTION: Book of condolences
+
+  CREATE: Add entry
+  NAME: Name
+  MESSAGE: Message
+  DATE: Date
+
+  LIST:
+    PUB: Pub.

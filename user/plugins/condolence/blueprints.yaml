@@ -1,0 +1,28 @@
+name: Condolence
+slug: condolence
+type: plugin
+version: 1.0.0
+description: digital condolence book
+icon: quote-left
+author:
+  name: Sebastian Laube
+  email: sebastian.laube@mindbox.de
+license: MIT
+gpm: false
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool

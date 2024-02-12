@@ -1,0 +1,21 @@
+title: Default Page
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              ordering@: 99
+        advanced:
+          fields:
+            overrides:
+              security: admin.super
+            routes_only:
+              security: admin.super
+            admin_only:
+              security: admin.super

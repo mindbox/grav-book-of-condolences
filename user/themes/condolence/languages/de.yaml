@@ -1,0 +1,29 @@
+THEME_C:
+  GOODBYE:
+    TITLE: 'Wir nehmen Anteil:'
+  FORM:
+    FIELD:
+      NAME: Name
+      MESSAGE: Nachricht
+      SPAM_Q: 'Anti-Spam-Frage: In welcher Stadt steht der Pariser Eiffelturm?'
+      SPAM_FAIL: Bei der Anti-Spam-Frage versagt.
+      DSGVO: 'Ich willige in die Datenverarbeitung wie oben beschrieben ein. Ich kann die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.'
+      SUBMIT: Nachricht senden
+    PRIVACY: 'Wir erheben und verarbeiten personenbezogene Daten zur Anzeige Ihres Namens und Ihrer Kondolenzbekundung sowie zu den damit verbundenen internen Zwecken. Ihre Beiträge werden gegebenenfalls in einem Kondolenzbuch in gedruckter und / oder digitaler Form archiviert und bleiben auch für Dritte einsehbar.<br><br>Ihre Kondolenzbekundung wird redaktionell überprüft, um Missbrauch vorzubeugen.'
+    CLOSING: Das Online-Kondolenzbuch steht offen bis zum
+    OPTIONAL: optional
+    THANKS: Danke für Ihre Nachricht. Wir geben sie schnellstmöglich frei.
+  A11Y:
+    SKIP2CONTENT: Zum Inhalt springen
+    SKIP2TOP: Nach oben
+  NAV:
+    FOOTER: Abschluss
+  ENV:
+    STATUS: Umgebung
+    PROD: Production
+    DEV: Development
+  CONFIG:
+    LOGO: Logo Datei
+    LOGO_HELP: Wenn Sie ein Logo verwenden möchten, wählen Sie eine Datei aus den Uploads in /home
+    FORM_OPEN: Formular offen bis
+    IMAGE: Bild (der verstorbenen Person)

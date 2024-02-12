@@ -1,0 +1,12 @@
+.t-default {
+    .main {
+        padding-block: var( --gap-deca );
+    }
+
+    .headline {
+        margin-bottom: var( --gap-deca );
+        font-size: var( --size-mega );
+        line-height: calc( 1ex / .38 );
+        text-wrap: balance;
+    }
+}

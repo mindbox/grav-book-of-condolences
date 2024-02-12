@@ -1,0 +1,15 @@
+{%- for meta in page.metadata %}
+    <meta {% if meta.name %}name="{{ meta.name|e }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv|e }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset|e }}" {% endif %}{% if meta.property %}property="{{ meta.property|e }}" {% endif %}{% if meta.content %}content="{{ meta.content|raw }}" {% endif %}>
+{% endfor -%}
+
+{%- set photo = page.find('/home').header.image -%}
+{% if photo -%}
+    {% set social_image = page.find('/home').media[photo].resize( 1200, 630 ).grayscale.url -%}
+{% endif -%}
+{% if page.metadata['og:image'] is not defined -%}
+    <meta property="og:image" content="{{ base_url_absolute }}{{ social_image }}">
+{% endif -%}
+{% if page.metadata['twitter:image'] is not defined %}
+    <meta property="twitter:image" content="{{ base_url_absolute }}{{ social_image }}">
+{% endif %}
+    <meta name="twitter:card" content="summary_large_image" />

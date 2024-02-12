@@ -1,0 +1,22 @@
+.DS_Store*
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*Zone.Identifier
+
+# Development Files
+*.map
+*.log
+dist/*/*.php
+
+# Dependencies       #
+######################
+node_modules
+node_modules/
+
+# Editor Settings
+.idea/*

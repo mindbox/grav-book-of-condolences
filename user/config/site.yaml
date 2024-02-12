@@ -1,0 +1,13 @@
+title: 'book of condolence'
+default_lang: 'de'
+author:
+  name: ''
+  email: ''
+metadata:
+  generator: ''
+  description: ''
+summary:
+  enabled: true
+  format: short
+  size: 200
+  delimiter: '==='

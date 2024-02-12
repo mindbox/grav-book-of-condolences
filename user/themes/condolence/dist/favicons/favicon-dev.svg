@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <style>
+        @media (prefers-color-scheme:dark){.candle{fill:#fff}}
+    </style>
+    <path fill="#fc0" d="M256 192c45.9 0 78-32.6 78-79.3 0-30-32.6-74.9-78-112.7-45.6 38-78 82.8-78 112.7 0 46.7 32.1 79.3 78 79.3z"/>
+    <path d="M352 256c0-17.7-14.3-32-32-32h-64v48c0 8.8-7.2 16-16 16s-16-7.2-16-16v-48h-32c-17.7 0-32 14.3-32 32v256h192V256z" style="fill:#000"/>
+    <path fill="#46B28F" d="M0 312h512v200H0z"/>
+    <text x="50%" y="84%" dominant-baseline="middle" text-anchor="middle" style="font:800 condensed 170px/1 sans-serif">DEV</text>
+</svg>

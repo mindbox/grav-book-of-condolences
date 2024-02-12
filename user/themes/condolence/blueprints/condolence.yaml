@@ -1,0 +1,30 @@
+title: Condolence Page
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+
+            header.closing:
+              type: datetime
+              label: THEME_C.CONFIG.FORM_OPEN
+              format: Y-m-d G:i
+              size: medium
+              toggleable: true
+
+            header.image:
+              type: pagemediaselect
+              label: THEME_C.CONFIG.IMAGE
+              size: medium
+              preview_images: true
+              accept:
+                - .jpg
+                - .jpeg

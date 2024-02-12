@@ -1,0 +1,37 @@
+default_locale: 'de'
+
+home:
+  alias: '/home'
+
+pages:
+  theme: condolence
+  markdown:
+    extra: true
+  process:
+    markdown: true
+    twig: true
+  frontmatter:
+    process_twig: true
+
+session:
+  initialize: false
+  name: condolence-site
+
+languages:
+  supported: [ 'de' ]
+  default_lang: 'de'
+  include_default_lang: false
+  include_default_lang_file_extension: false
+
+cache:
+  gzip: true
+
+images:
+  default_image_quality: 70
+  defaults:
+    loading: lazy
+
+accounts:
+  avatar: multiavatar
+
+pwd_regex: '^[ -~]{8,}$'

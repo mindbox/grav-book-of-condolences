@@ -1,0 +1,38 @@
+.footer {
+    --link-color: currentcolor;
+    --link-colorHover: currentcolor;
+
+    padding-top: var( --gap-deca );
+    padding-bottom: var( --gap-deca );
+
+    color: var( --o-footer-color );
+    background-color: var( --o-footer-background );
+
+    .wrapped {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        font-size: .9em;
+
+        .menu {
+            display: flex;
+            gap: 1ex;
+
+            &__link:focus,
+            &__link:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__elevator .icon {
+        fill: currentcolor;
+        height: 1em;
+        width: 1em;
+        overflow: hidden;
+        forced-color-adjust: auto;
+    }
+}

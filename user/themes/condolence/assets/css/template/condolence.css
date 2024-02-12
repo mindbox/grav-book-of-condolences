@@ -1,0 +1,8 @@
+.t-condolence {
+    --wrapper: 86rem;
+
+    .main {
+        display: flex;
+        min-height: 100%;
+    }
+}

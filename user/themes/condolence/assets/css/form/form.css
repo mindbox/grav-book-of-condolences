@@ -1,0 +1,81 @@
+.form {
+    /*
+        API:
+        --f-form-label-ink          label text color
+        --f-form-placeholder        placeholder text color
+        --f-form-outline-ink        outline color override
+        --f-form-error-ink          error text color
+        --f-form-error-background   error background
+    */
+
+    display: grid;
+    gap: var( --gap );
+
+    /*
+    @media (min-width: 60em) {
+        grid-template-columns: 1fr 1fr;
+
+        & > * {
+            grid-column: span 2;
+        }
+
+        &__field:first-child,
+        &__field:nth-child(2) {
+            grid-column: span 1;
+        }
+    }
+    */
+
+    ::placeholder { color: var( --f-input-placeholder, #777 ); }
+
+    textarea,
+    label {
+        display: block;
+    }
+
+    :where( label, legend ) {
+        line-height: var( --font-line );
+        color: var( --f-form-label-color, var( --default-color ) );
+    }
+
+    :where( fieldset&__field ) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var( --f-input-padding, .7rem );
+    }
+    :where( fieldset legend&__label ) {
+        float: left;
+        width: 100%;
+    }
+    @media ( max-width: 25em ) {
+        :where( fieldset&__field ) {
+            gap: calc( var( --f-input-padding, .7rem ) / 2 );
+        }
+        :where( fieldset > * ) {
+            width: 100%;
+        }
+    }
+
+    &__notice {
+        margin-bottom: var( --gap );
+    }
+
+    &__buttons .button {
+        width: 100%;
+        max-width: 15em;
+    }
+
+    &__field:not(.levitate) input.bool + .bool__label {
+        color: currentcolor;
+    }
+
+    .form-honeybear {
+        position: absolute;
+        scale: 0;
+    }
+
+    .field-privacy .form__label,
+    .privacy-policy {
+        font-size: .8em;
+    }
+}

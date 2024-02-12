@@ -1,0 +1,102 @@
+{%- set body_classes = [
+    body_classes|default( '' ),
+    tpl_body_classes|default(''),
+    header.body_classes,
+]|join( ' ' )|trim -%}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" class="no-js">
+<head>
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="view-transition" content="same-origin" />
+    <title>{{ page.title }}</title>
+
+    {% include 'partials/metadata.html.twig' %}
+    <link rel="canonical" href="{{ page.url(true, true) }}">
+{% endblock head %}
+
+<script type="module">
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+</script>
+
+{% block stylesheets -%}
+    {% do assets.addCss('theme://dist/css/main.css', 100) %}
+{% endblock -%}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://dist/js/main.js', { group:'bottom', priority: 101 }) %}
+    {% if config.theme.env == 'dev' %}
+        {% do assets.addJs('theme://dist/js/dev.js', { group:'bottom' }) %}
+    {% endif %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+
+{% if config.theme.env == 'dev' %}
+    <link rel="icon" href="{{ url('theme://dist/favicons/favicon-dev.svg') }}">
+    <meta name="robots" content="noindex,nofollow">
+{% else %}
+    <link rel="icon" href="{{ url('theme://dist/favicons/favicon.svg') }}">
+{% endif -%}
+
+</head>
+<body id="top" class="{{ body_classes }}">
+
+{% block header %}
+    <header class="header wrapping">
+        <a href="#content" class="skiplink visually-hidden">{{ 'THEME_C.A11Y.SKIP2CONTENT'|t|e }}</a>
+
+        <div class="wrapped">
+            {% include 'partials/logo.html.twig' %}
+        </div>
+    </header>
+{% endblock %}
+
+<main class="main" id="content">
+    {% block body %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+</main>
+
+{% block footer %}
+    <footer class="footer wrapping" id="footer">
+        <div class="wrapped">
+            {% if pages.children.visible|length %}
+            <nav class="footer__nav" aria-label="{{ 'THEME_C.NAV.FOOTER'|t|e }}">
+                <ul class="menu" role="list">
+                {% for p in pages.children.visible %}
+                    {% set classes = [ 'menu__item' ] %}
+                    {% if p.active %}
+                        {% set classes = classes|merge([ 'active' ]) %}
+                    {% endif %}
+                    <li class="{{ classes|join( ' ' ) }}">
+                        <a class="menu__link" href="{{ p.url }}"{% if p.active %} aria-current="page"{% endif %}>
+                            {{ p.menu }}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </nav>
+            {% endif %}
+            <a href="#top" class="footer__elevator" aria-label="{{ 'THEME_C.A11Y.SKIP2TOP'|t|e }}" title="{{ 'THEME_C.A11Y.SKIP2TOP'|t|e }}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="icon" role="img" aria-hidden="true" preserveAspectRatio="xMinYMin">
+                    <path d="M98.01 45.5 63.99 17.86l-34 27.64-6.79-8.34L63.99 4l40.81 33.16z"/>
+                    <path d="M98.01 84.74 63.99 57.1l-34 27.64-6.79-8.34 40.79-33.17L104.8 76.4z"/>
+                    <path d="M98.01 124 63.99 96.34l-34 27.66-6.79-8.34 40.79-33.17 40.81 33.17z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>

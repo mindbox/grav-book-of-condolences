@@ -1,0 +1,56 @@
+{% set tpl_body_classes = 't-condolence' %}
+{% set page_title = page.header.headline|default( page.title ) %}
+{% set image = page.media[header.image] %}
+{% extends 'partials/base.html.twig' %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+    <div class="condolence">
+        {% if config.theme.logo %}
+        <div class="condolence__logo">
+            <div class="wrapped">
+                {% include 'partials/logo.html.twig' %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="rip">
+            <div class="rip__content">
+                <img src="{{ image.cropResize(960,800).grayscale.quality(85).url }}" alt="Verena Veith" class="rip__image">
+                <div class="rip__farewell textflow">
+                    <h1 class="rip__title">
+                        {{ page_title }}
+                    </h1>
+                    {{ page.content|raw }}
+                </div>
+                {% if header.closing == null or ( header.closing and date( header.closing ) > date( 'now' ) ) %}
+                <div class="rip__form">
+                    {% include "forms/form.html.twig" %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="goodbye">
+            <div class="goodbye__content">
+                <h2 class="goodbye__title">{{ 'THEME_C.GOODBYE.TITLE'|t }}</h2>
+
+                {% set entries = grav.get('flex').collection( 'goodbye' ) %}
+                {% set entries = entries.filterBy({'published': true}) %}
+                {% set entries = entries.sort({ date: 'DESC' }) %}
+
+                {% for item in entries %}
+                    <blockquote class="goodbye__entry">
+                        <div class="textflow">
+                            {{ item.message|nl2br|markdown|striptags('<p><br>')|raw }}
+                        </div>
+                        <footer>
+                            <cite class="author">
+                                — {{ item.name }}, {{ item.date|localizeddate( 'dd.MM.y HH:mm', 'none', lang ) }}
+                            </cite>
+                        </footer>
+                    </blockquote>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

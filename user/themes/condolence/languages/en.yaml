@@ -1,0 +1,29 @@
+THEME_C:
+  GOODBYE:
+    TITLE: 'We share our mourn:'
+  FORM:
+    FIELD:
+      NAME: Name
+      MESSAGE: Message
+      SPAM_Q: 'Anti-Spam Question: In which city is the Eiffel Tower located?'
+      SPAM_FAIL: Failed the anti-spam question.
+      DSGVO: 'I consent to the processing of data as described above. I can revoke the consent at any time with effect for the future.'
+      SUBMIT: Send message
+    PRIVACY: 'We collect and process personal data to display your name and your message of condolence, as well as for related internal purposes. Your contributions may be archived in a printed and/or digital condolence book and will remain accessible to third parties.<br><br>Your message of condolence will be editorially reviewed to prevent abuse.'
+    CLOSING: You can sign the online condolence book until
+    OPTIONAL: optional
+    THANKS: Thank you for your message. We will release it as soon as possible.
+  A11Y:
+    SKIP2CONTENT: Skip to content
+    SKIP2TOP: Back to top
+  NAV:
+    FOOTER: Conclusion
+  ENV:
+    STATUS: Environment
+    PROD: Production
+    DEV: Development
+  CONFIG:
+    LOGO: Logo File
+    LOGO_HELP: If you want to use a logo, select a file from the uploads in /home
+    FORM_OPEN: Form open until
+    IMAGE: Image (of the deceased person)

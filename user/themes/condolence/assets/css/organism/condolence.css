@@ -1,0 +1,48 @@
+.condolence {
+    --inline-space: 1rem;
+    --column-width: 40rem;
+
+    display: grid;
+    width: 100%;
+
+    &__logo {
+        color: var( --o-rip-color );
+        background: var( --o-rip-background );
+        padding: var( --gap ) var( --inline-space ) 0;
+
+        .wrapped {
+            width: 100%;
+            max-width: var( --column-width );
+            margin-inline-start: auto;
+        }
+    }
+
+    @media (min-width: 48em) {
+        --inline-space: 2rem;
+
+        grid-template-areas: 'logo .' 'rip goodbye';
+        grid-template-columns: 1fr 1fr;
+
+        &__logo {
+            grid-area: logo;
+        }
+
+        .rip {
+            grid-area: rip;
+        }
+
+        .goodbye {
+            grid-area: goodbye;
+        }
+
+        .rip__content {
+            height: 100%;
+            margin-inline-start: auto;
+        }
+    }
+
+
+    @media (min-width: 60em) {
+        --inline-space: 3rem;
+    }
+}

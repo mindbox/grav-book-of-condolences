@@ -1,0 +1,8 @@
+.header {
+    color: var( --o-header-color );
+    background-color: var( --o-header-background );
+
+    .wrapped {
+        padding: var( --gap ) 0;
+    }
+}

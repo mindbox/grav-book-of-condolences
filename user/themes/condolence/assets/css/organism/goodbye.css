@@ -1,0 +1,24 @@
+.goodbye {
+    padding-block: 2rem;
+    padding-inline: var( --inline-space );
+
+    &__content {
+        display: grid;
+        gap: 2rem;
+        max-width: var( --column-width );
+    }
+
+    &__title {
+        font-size: var( --size-kilo );
+        font-weight: 700;
+    }
+
+    &__entry {
+        .author {
+            display: block;
+            margin-block-start: 1ex;
+            font-size: .9em;
+            font-style: italic;
+        }
+    }
+}

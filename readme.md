@@ -109,3 +109,17 @@ You can use ddev for local development, and here are some handy Make commands fo
 | `make jsmin`     | quick build of js for release         |
 | `make cssmin`    | quick build of css for release        |
 
+## Deploying to Docker
+
+Since we use kubernetes for hosting sites like this, this project includes a Dockerfile already.
+Once build the site will be albe to run in it's own self contained container.
+
+Just make sure to create persistent Volumes for the following 3 folders in the container:
+- /var/www/html/user/accounts --> for storing your users
+- /var/www/html/user/pages --> storing your pages
+- /var/www/html/user/data/flex-objects --> storing your comments
+
+Also if you would like to use grav in any other language instead of using the `setlang.sh` you just need to provide `LANGUAGE` as an environment variable to the container like so:
+```console
+docker run -d --name condolences -p 80:80 -e LANGUAGE=en <image_name>:latest
+```

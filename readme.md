@@ -2,6 +2,8 @@
 
 A ready-to-go book of condolences made with [grav](https://getgrav.org).
 
+![Screenshot of the condolence website with some placeholder content](screenshot.png)
+
 ## Background
 
 Life can sometimes hit hard. A valued employee of a client passed away suddenly. We were contacted at midday with a condolence website that had to be online the next day. Thanks to good boilerplates, we were able to deliver it by the evening.
@@ -85,6 +87,10 @@ If you would like to help with translating the project, add the following files 
 * user/themes/condolence/languages/XX.yaml
 
 Since we are not native English speakers, we are looking forward to any corrections for the English translation.
+
+## Working with ddev
+
+We provide [ddev](https://ddev.com/) settings here. But be aware that setting you may apply in the admin interface, might only modify settings files in `/user/env`. So make sure to modify the settings in the live/production enviroment or do it by hand in user/config`.
 
 ## CLI commands for convinience
 

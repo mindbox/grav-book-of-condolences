@@ -55,6 +55,11 @@ grav_prepare:
 	@mkdir -p user/data/flex-objects
 	@echo "$(C_CYAN)Installing dependencies$(C_NC)"
 	@./bin/grav install
+ifneq (,$(wildcard ./setlang.sh))
+	@chmod +x setlang.sh
+	@setlang.sh
+	@rm setlang.sh
+endif
 
 .PHONY: update
 update:

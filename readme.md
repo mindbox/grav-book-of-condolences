@@ -88,10 +88,6 @@ If you would like to help with translating the project, add the following files 
 
 Since we are not native English speakers, we are looking forward to any corrections for the English translation.
 
-## Working with ddev
-
-We provide [ddev](https://ddev.com/) settings here. But be aware that setting you may apply in the admin interface, might only modify settings files in `/user/env`. So make sure to modify the settings in the live/production enviroment or do it by hand in user/config`.
-
 ## CLI commands for convinience
 
 | command        | function                                         |
@@ -114,6 +110,10 @@ You can use ddev for local development, and here are some handy Make commands fo
 | `make build`     | build frontend code for release       |
 | `make jsmin`     | quick build of js for release         |
 | `make cssmin`    | quick build of css for release        |
+
+## Working with ddev
+
+We provide [ddev](https://ddev.com/) settings here. But be aware that setting you may apply in the admin interface, might only modify settings files in `/user/env`. So make sure to modify the settings in the live/production enviroment or do it by hand in user/config`.
 
 ## Deploying to Docker
 

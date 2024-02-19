@@ -88,11 +88,11 @@ Since we are not native English speakers, we are looking forward to any correcti
 
 ## CLI commands for convinience
 
-| command | function |
-|---|---|
-| `make install` | install everything to run the project |
-| `make update` | update grav and plugins to latest stable version |
-| `make clear` | clear cache |
+| command        | function                                         |
+| -------------- | ------------------------------------------------ |
+| `make install` | install everything to run the project            |
+| `make update`  | update grav and plugins to latest stable version |
+| `make clear`   | clear cache                                      |
 
 ## Customizing the theme
 
@@ -100,11 +100,12 @@ If you need to modify the theme in any way, make sure to read the [readme]( ./us
 
 You can use ddev for local development, and here are some handy Make commands for development.
 
-| command | function |
-|---|---|
+| command          | function                              |
+| ---------------- | ------------------------------------- |
 | `make themeinit` | install dependencies for theme builds |
-| `make watch` | development mode |
-| `make lint` | lint frontend code |
-| `make build` | build frontend code for release |
-| `make jsmin` | quick build of js for release |
-| `make cssmin` | quick build of css for release |
+| `make watch`     | development mode                      |
+| `make lint`      | lint frontend code                    |
+| `make build`     | build frontend code for release       |
+| `make jsmin`     | quick build of js for release         |
+| `make cssmin`    | quick build of css for release        |
+
